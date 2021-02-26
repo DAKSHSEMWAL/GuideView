@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="black_recommended">#000000</color>
+    <color name="textColor">#525252</color>
+    <color name="link_blue">#498fe1</color>
+    <color name="dark_monsoon">#454545</color>
+    <color name="score_vitals">#ffb773</color>
+    <color name="score_restfulness">#C8A2C8</color>
+    <color name="score_sleep_quality">#7CBDE5</color>
+    <color name="score_sleep_hygiene">#0fbfaf</color>
+    <color name="whitish_grey_dark">#f7f7f7</color>
+    <color name="bg_frame_color">#FFFFFF</color>
+    <!--    Live Mode-->
+    <color name="color_unhealthy">#FF5F5F</color>
+    <color name="color_chart_bg">#040743</color>
+    <color name="jordy_blue">#70B2EF</color>
+    <color name="spindle">#BED5EE</color>
+</resources>

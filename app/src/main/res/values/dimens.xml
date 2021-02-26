@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="day_radioButtonSize">30dp</dimen>
+    <dimen name="normal_size">@dimen/_12sdp</dimen>
+</resources>

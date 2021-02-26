@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_frame_color"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.6">
+
+        <LinearLayout
+            android:id="@+id/ll_report_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginRight="8dp"
+            android:orientation="horizontal"
+            android:paddingStart="8dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="4dp">
+
+            <TextView
+                android:id="@+id/tvSummaryDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Sun,27 Aug 2017"
+                android:textColor="@color/black_recommended"
+                android:textSize="@dimen/_9sdp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/ll_report_day"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
+
+            <LinearLayout
+                android:id="@+id/ll_sleep_score_sleep_report"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:includeFontPadding="false"
+                    android:text="Sleep Score"
+                    android:textSize="@dimen/_8sdp" />
+
+                <TextView
+                    android:id="@+id/tvSummaryScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:includeFontPadding="false"
+                    android:text="89"
+                    android:textColor="@color/black_recommended"
+                    android:textSize="@dimen/_27sdp" />
+
+            </LinearLayout>
+
+            <com.github.lzyzsd.circleprogress.ArcProgress
+                android:id="@+id/apVitals"
+                android:layout_width="116dp"
+                android:layout_height="116dp"
+                android:layout_centerInParent="true"
+                android:background="@android:color/transparent"
+                app:arc_bottom_text="Vitals"
+                app:arc_bottom_text_size="@dimen/_6sdp"
+                app:arc_finished_color="@color/score_vitals"
+                app:arc_max="30"
+                app:arc_progress="0"
+                app:arc_suffix_text_size="0dp"
+                app:arc_text_color="@color/score_vitals"
+                app:arc_text_size="0sp"
+                app:arc_unfinished_color="@color/whitish_grey_dark" />
+
+            <com.github.lzyzsd.circleprogress.ArcProgress
+                android:id="@+id/apRest"
+                android:layout_width="136dp"
+                android:layout_height="136dp"
+                android:layout_centerInParent="true"
+                android:background="@android:color/transparent"
+                app:arc_bottom_text="Restfulness"
+                app:arc_bottom_text_size="@dimen/_6sdp"
+                app:arc_finished_color="@color/score_restfulness"
+                app:arc_max="10"
+                app:arc_progress="0"
+                app:arc_suffix_text_size="0dp"
+                app:arc_text_color="@color/score_restfulness"
+                app:arc_text_size="0sp"
+                app:arc_unfinished_color="@color/whitish_grey_dark" />
+
+            <com.github.lzyzsd.circleprogress.ArcProgress
+                android:id="@+id/apQuality"
+                android:layout_width="156dp"
+                android:layout_height="156dp"
+                android:layout_centerInParent="true"
+                android:background="@android:color/transparent"
+                app:arc_bottom_text="Sleep Quality"
+                app:arc_bottom_text_size="@dimen/_6sdp"
+                app:arc_finished_color="@color/score_sleep_quality"
+                app:arc_max="40"
+                app:arc_progress="0"
+                app:arc_suffix_text_size="0dp"
+                app:arc_text_color="@color/score_sleep_quality"
+                app:arc_text_size="0sp"
+                app:arc_unfinished_color="@color/whitish_grey_dark" />
+
+            <com.github.lzyzsd.circleprogress.ArcProgress
+                android:id="@+id/apHygiene"
+                android:layout_width="176dp"
+                android:layout_height="176dp"
+                android:layout_centerInParent="true"
+                android:background="@android:color/transparent"
+                app:arc_bottom_text="Sleep Routine"
+                app:arc_bottom_text_size="@dimen/_6sdp"
+                app:arc_finished_color="@color/score_sleep_hygiene"
+                app:arc_max="20"
+                app:arc_progress="0"
+                app:arc_suffix_text_size="0dp"
+                app:arc_text_color="@color/score_sleep_hygiene"
+                app:arc_text_size="0sp"
+                app:arc_unfinished_color="@color/whitish_grey_dark" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="36dp">
+
+        <LinearLayout
+            android:id="@+id/llSleepSection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="16dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/sleep_main" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sleep"
+                android:textSize="@dimen/_12sdp" />
+
+            <TextView
+                android:id="@+id/tvSummaryDuration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11sdp"
+                tools:text="7H 21M" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvSleepTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="28dp"
+            android:text="11.25PM"
+            android:textColor="@color/textColor"
+
+            android:textSize="@dimen/_7sdp"
+            app:layout_constraintBottom_toTopOf="@id/ivDottedLine"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tvWakeupTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="16dp"
+            android:text="07.15AM"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/_7sdp"
+            app:layout_constraintBottom_toTopOf="@id/ivDottedLine"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivDottedLine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/sleep_line_dotted"
+            app:layout_constraintTop_toBottomOf="@id/llSleepSection" />
+
+        <LinearLayout
+            android:id="@+id/ll_report_an_issue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivDottedLine">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="4dp"
+                android:src="@drawable/ic_nav_dozee_wiki"
+                app:tint="@color/link_blue" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="Report an issue"
+                android:textColor="@color/link_blue"
+                android:textSize="@dimen/_12sdp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_report_an_issue">
+
+            <RelativeLayout
+                android:id="@+id/rl_heart_report"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/heart_unchecked" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="32dp"
+
+                    android:text="Heart"
+                    android:textSize="@dimen/_8sdp" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="44dp">
+
+                    <TextView
+                        android:id="@+id/tvSummaryHeartRate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/_15sdp"
+                        tools:text="60" />
+
+                    <TextView
+                        android:id="@+id/tv_heart_report_text_unit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@id/tvSummaryHeartRate"
+                        android:layout_toEndOf="@id/tvSummaryHeartRate"
+
+                        android:text="BPM"
+                        android:textColor="@color/dark_monsoon"
+                        android:textSize="@dimen/normal_size" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_respiration_report"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="vertical">
+
+                <!--<ImageView
+                    android:id="@+id/iv_respiration_click_indicator"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/respiration_unchecked"
+                    android:layout_centerHorizontal="true"/>-->
+
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/respiration_unchecked" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="32dp"
+
+
+                    android:text="Respiration"
+                    android:textSize="@dimen/_8sdp" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="44dp">
+
+                    <TextView
+                        android:id="@+id/tvSummaryBreathRate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/_15sdp"
+                        tools:text="16" />
+
+                    <TextView
+                        android:id="@+id/tv_respiration_report_text_unit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@id/tvSummaryBreathRate"
+                        android:layout_toEndOf="@id/tvSummaryBreathRate"
+                        android:text="RPM"
+                        android:textColor="@color/dark_monsoon"
+                        android:textSize="@dimen/normal_size" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_stress_report"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/recovery_unchecked"
+                    app:tint="#469285" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="32dp"
+
+                    android:text="Recovery"
+                    android:textSize="@dimen/_8sdp" />
+
+                <TextView
+                    android:id="@+id/tvSummaryRecRate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="44dp"
+
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/_15sdp"
+                    tools:text="--%" />
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_notes_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="4dp"
+
+        android:text="Notes"
+        android:textSize="@dimen/normal_size" />
+
+    <LinearLayout
+        android:id="@+id/ll_show_notes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tv_selected_notes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:ellipsize="end"
+
+            android:maxLines="1"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/normal_size"
+            tools:ignore="InefficientWeight"
+            tools:text="Healthy, Slept well, Refreshed" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_add_notes" />
+
+    </LinearLayout>
+
+</LinearLayout>
